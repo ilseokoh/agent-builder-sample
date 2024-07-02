@@ -3,6 +3,16 @@
 {% block head %}
 <!-- Widget JavaScript bundle -->
 <script src="https://cloud.google.com/ai/gen-app-builder/client?hl=en_US"></script>
+<link rel="stylesheet" href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
+<script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
+<style>
+    df-messenger {
+      z-index: 999;
+      position: fixed;
+      bottom: 16px;
+      right: 16px;
+    }
+  </style>
 {% endblock %}
 
 {% block content %}
@@ -17,5 +27,16 @@
         configId="{{user_info.widget_id}}"
         triggerId="searchWidgetTrigger">
     </gen-search-widget>
+
+    <df-messenger
+            oauth-client-id="1025547303895-t6hl9v2md9p4ms2c4i0vq0c5m6fedvsi.apps.googleusercontent.com"
+            project-id="agent-builder-003"
+            agent-id="9702009c-e9a0-431b-965b-a011c5c1b370"
+            language-code="en"
+            max-query-length="-1">
+        <df-messenger-chat-bubble
+            chat-title="manual_agent">
+        </df-messenger-chat-bubble>
+    </df-messenger>
 </div>
 {% endblock %}
