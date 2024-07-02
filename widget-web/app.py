@@ -6,6 +6,8 @@ from flask import Flask, request, render_template, session, abort, redirect
 
 WIDGET_ID = os.getenv('WIDGET_ID')
 EXPECTED_AUDIENCE= os.getenv('EXPECTED_AUDIENCE')
+CLIENT_ID = os.getenv('CLIENT_ID')
+AGENT_ID=os.getenv('AGENT_ID')
 
 app = Flask(__name__)
 app.secret_key = "ai-help-desk"
@@ -19,7 +21,7 @@ def index():
     user_info = {
         "widget_id": WIDGET_ID
     }
-    return render_template("index.html", user_info=user_info)
+    return render_template("index.html", user_info=user_info, client_id=CLIENT_ID, agent_id=AGENT_ID)
 
 @app.route("/help")
 def help():

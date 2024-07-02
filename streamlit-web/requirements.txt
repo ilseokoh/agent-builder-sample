@@ -1,0 +1,15 @@
+streamlit
+requests
+google-api-core
+google-auth
+google-cloud-discoveryengine
+googleapis-common-protos
+google-cloud-aiplatform
+google-cloud-logging
+google-cloud-storage
+python-dotenv
+asyncio
+httpx-oauth
+google_auth_oauthlib
+aiohttp
+pandas
