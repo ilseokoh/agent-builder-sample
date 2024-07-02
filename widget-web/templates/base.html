@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+  <title>AI Help Desk</title>
+  <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/dd5001be8b.js" crossorigin="anonymous"></script>
+  <meta name="theme-color" content="#7952b3">
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+  <link href="{{ url_for('static', filename='css/sidebar.css') }}" rel="stylesheet">
+  {% block head %}
+  {% endblock %}
+</head>
+<body>
+    <main>
+        
+        <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 287px;">
+            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                <span class="fs-5" style="margin-bottom: 2.5rem;"><i class="fa-solid fa-message-bot"></i> AI Help Desk</span>
+            </a>
+            <ul class="nav nav-pills flex-column mb-auto">
+                <li class="nav-item" style="list-style-type: none;">
+                <a href="/" class="nav-link text-white{% if request.path == '/' %} active{% endif %}" aria-current="page">
+                    <i class="fa-solid fa-magnifying-glass"></i>&nbsp;
+                    검색
+                </a>
+                </li>
+                 <li class="nav-item" style="list-style-type: none;">
+                <a href="/help" class="nav-link text-white{% if request.path == '/help' %} active{% endif %}">
+                    <i class="fa-solid fa-circle-info" style="list-style-type: none;"></i>&nbsp;
+                    도움말
+                </a>
+                </li>
+            </ul>
+            <hr>
+            <!-- <div class="dropdown">
+                <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="{{user_info.picture}}" alt="" width="32" height="32" class="rounded-circle me-2">
+                <strong>{{user_info.email}}</strong>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+                
+                </ul>
+            </div> -->
+        </div>
+        <div class="b-example-divider"></div>
+        
+        <div class="container-fluid p-5 overflow-auto">
+          <!-- Content here -->
+          {% block content %}
+          {% endblock %}
+        </div>
+      </main>
+        
+    
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery-3.7.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/sidebar.js') }}"></script>
+    
+</body>
+</html>

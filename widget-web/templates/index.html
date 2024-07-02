@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<!-- Widget JavaScript bundle -->
+<script src="https://cloud.google.com/ai/gen-app-builder/client?hl=en_US"></script>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row mb-5">
+        <h1>AI Help Desk</h1>
+        <a href="#" class="btn btn-primary btn-lg px-4" id="searchWidgetTrigger">검색 시작하기</a>
+        <hr class="mt-3"/>
+    </div>
+
+    <gen-search-widget
+        configId="{{user_info.widget_id}}"
+        triggerId="searchWidgetTrigger">
+    </gen-search-widget>
+</div>
+{% endblock %}

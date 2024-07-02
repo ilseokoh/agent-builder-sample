@@ -1,0 +1,6 @@
+flask==3.0.3
+requests==2.31.0
+google-cloud-logging==3.10.0
+gunicorn==22.0.0
+python-dotenv
+google-auth=2.31.0
